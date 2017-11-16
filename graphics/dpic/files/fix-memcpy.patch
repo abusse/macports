@@ -1,0 +1,16 @@
+diff -Naur p2clib.c p2clib.c
+--- p2clib.c	2017-07-30 18:40:56.000000000 +0200
++++ p2clib.c	2017-11-09 14:59:33.000000000 +0100
+@@ -73,11 +73,7 @@
+ {
+     register char *dd = (char *)d, *ss = (char *)s;
+     if (dd < ss || dd - ss >= n) {
+-#if defined(bcopy) && defined(memcpy)
+-        my_memcpy(dd, ss, n);
+-#else
+ 	memcpy(dd, ss, n);
+-#endif
+     } else if (n > 0) {
+ 	dd += n;
+ 	ss += n;
+

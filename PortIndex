@@ -4,5 +4,5 @@ x86_64-pc-linux-gnu-gdb 486
 variants universal depends_build port:gettext portdir cross/x86_64-pc-linux-gnu-gdb description {GDB: The GNU Project Debugger for x86_64-pc-linux-gnu} homepage http://www.gnu.org/software/gdb/ epoch 0 platforms darwin name x86_64-pc-linux-gnu-gdb long_description {GDB, the GNU Project Debugger, for x86_64-pc-linux-gnu cross development.} maintainers {gmail.com:stuartwesterman openmaintainer} license GPL-3+ depends_extract bin:xz:xz categories {cross devel} version 7.11 revision 0
 x86_64-unknown-freebsd10.2-gdb 510
 variants universal depends_build port:gettext portdir cross/x86_64-unknown-freebsd10.2 description {GDB: The GNU Project Debugger for x86_64-unknown-freebsd10.2} homepage http://www.gnu.org/software/gdb/ epoch 0 platforms darwin name x86_64-unknown-freebsd10.2-gdb long_description {GDB, the GNU Project Debugger, for x86_64-unknown-freebsd10.2 cross development.} maintainers {gmail.com:stuartwesterman openmaintainer} license GPL-3+ depends_extract bin:xz:xz categories {cross devel} version 7.11 revision 0
-dpic 209
-platforms darwin description {dpic plotting utility} portdir graphics/dpic name dpic categories graphics version 2017.08.01 homepage https://ece.uwaterloo.ca/~aplevich/dpic/ revision 0 license unknown epoch 0
+dpic 228
+platforms darwin description {dpic plotting utility} portdir graphics/dpic variants universal name dpic categories graphics version 2017.08.01 homepage https://ece.uwaterloo.ca/~aplevich/dpic/ revision 1 license unknown epoch 0
