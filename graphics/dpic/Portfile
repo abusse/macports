@@ -3,7 +3,7 @@
 PortSystem 1.0
 
 name                dpic
-version             2017.08.01
+version             2021.01.01
 categories          graphics
 platforms           darwin
 
@@ -14,10 +14,9 @@ description         dpic plotting utility
 homepage            https://ece.uwaterloo.ca/~aplevich/dpic/
 master_sites        https://ece.uwaterloo.ca/~aplevich/dpic/
 
-checksums           rmd160  2ef5ab11c13a3520431c531158d0c8fb2a6cdff4 \
-                    sha256  d066d6071e0136aa89a588a2580b8c70574a836f5aecf6ce15f4416d5f76de3d
-
-patchfiles      	fix-memcpy.patch
+checksums           rmd160  537c8e3b97b09427e01cc04bbd31950ca92b58cc \
+                    sha256  beb0624d0a9d688b250ddfd658c6dd828ae74646660b69be445d89efc1793e6f \
+                    size    918686
 
 build.target        ${name}
 destroot.post_args  DESTDIR=${destroot} PREFIX=${prefix}
