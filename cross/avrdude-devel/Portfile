@@ -1,0 +1,45 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem 1.0
+
+name              avrdude-devel
+conflicts         avrdude
+version           6.3-20210329
+categories        cross devel
+maintainers       {g5pw @g5pw} openmaintainer
+description       an Atmel AVR MCU programmer
+long_description  AVRDUDE: AVR Downloader/UploaDEr - is a program for \
+                  updating the flash, eeprom, fuse, and lock bit memories \
+                  of Atmel AVR microcontrollers.  It operations with \
+                  several popular programmers including the STK500, \
+                  JTAGICE MkII, AVRISP, and others.
+homepage          https://www.nongnu.org/avrdude/
+platforms         darwin
+license           GPL-2
+
+fetch.type        git
+git.url           https://github.com/facchinm/avrdude.git
+git.branch        1ebcc35ab165ae42396e3278738404da15853ae5
+
+distname          avrdude
+
+depends_lib       port:libusb \
+                  port:ncurses \
+                  port:libftdi1 \
+                  port:libelf \
+                  port:readline
+
+patchfiles        patch-stk500v2.diff
+
+configure.args    --mandir=${prefix}/share/man \
+                  --disable-parport
+
+variant docs description {Build documentation (requires LaTeX)} {
+    depends_build-append  port:texlive-latex
+
+    configure.args-append --enable-doc
+}
+
+post-patch {
+    system "cd ${worksrcpath} && ./bootstrap"
+}

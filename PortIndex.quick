@@ -1,4 +1,9 @@
 avarice-devel 0
-x86_64-pc-linux-gnu-gdb 559
-x86_64-unknown-freebsd10.2-gdb 1073
-dpic 1618
+avr-gdb 544
+avr-libc-devel 1009
+avrdude-devel 1521
+opencbm 2217
+x86_64-pc-linux-gnu-gdb 2902
+x86_64-unknown-freebsd10.2-gdb 3416
+dpic 3965
+parity 4202

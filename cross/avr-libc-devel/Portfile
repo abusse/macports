@@ -1,0 +1,41 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem              1.0
+
+name                    avr-libc-devel
+conflicts               avr-libc
+version                 3.0-20210329
+
+categories              cross
+maintainers             nomaintainer
+supported_archs         noarch
+license                 BSD
+
+description             C library for the AVR microcontroller.
+long_description        AVR Libc is a Free Software project whose goal is \
+                        to provide a high quality C library for use with \
+                        GCC on Atmel AVR microcontrollers.
+platforms               darwin
+homepage                https://www.nongnu.org/avr-libc/
+
+# installs deliberately files outside regular tree:
+destroot.violate_mtree  yes
+
+depends_lib             port:gettext \
+                        port:avr-gcc
+
+fetch.type              git
+git.url                 https://github.com/stevenj/avr-libc3.git
+git.branch              23c31a1899587c91e0eb2c91c57e142edabf431f
+
+patchfiles              legacyio-fix.patch
+patch.pre_args          -p1
+
+distname                avr-libc
+
+configure.args          --host=avr --build=`./config.guess`
+configure.cc            avr-gcc
+
+post-patch {
+    system "cd ${worksrcpath} && ./bootstrap"
+}
